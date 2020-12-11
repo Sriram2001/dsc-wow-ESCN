@@ -3,6 +3,8 @@ import Home from './Home/Home';
 import Nav from './Nav/Nav';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect } from 'react';
+import User from './Components/Volunteer'
+
 
 function App() {
   useEffect(() => {
@@ -18,7 +20,8 @@ function App() {
       <Nav />
       <Router>
         <Switch>
-          <Route path='/' component={Home} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/volunteer' component={User} />
         </Switch>
       </Router>
     </main>
