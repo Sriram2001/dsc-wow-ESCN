@@ -6,7 +6,7 @@ export default function GetVolunteers() {
     const places_list = [];
     const places_id = []
 
-    VolunteerService.getuser().then((snapshot) => {
+    PlacesService.getplaces().then((snapshot) => {
         snapshot.forEach(doc=>{
             
             places_list.push(doc.data());

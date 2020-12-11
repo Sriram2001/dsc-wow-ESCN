@@ -5,7 +5,7 @@ import  firebase from "../Components/Firebase/firebase"
 
 const PlacesService = {
 
-    getuser: function() {
+    getplaces: function() {
         const db = firebase.firestore();
         return db.collection('places').get();
       
