@@ -1,0 +1,38 @@
+.home{
+    height: 100vh;
+    height: calc(100 * var(--vh, 1vh));
+    background-image: url(../assets/images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        text-align: center;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.637);
+        h1{
+            font-size: 135px;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+        i{
+            font-size: 30px;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        @media screen and (max-width: 700px) {
+            h1{
+                font-size: 90px;
+                margin-bottom: 20px;
+            }
+            i{
+                font-size: 18px;
+            }
+        }
+    }
+}
