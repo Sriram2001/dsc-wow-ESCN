@@ -17,11 +17,8 @@ const VolunteerService = {
     },
     getuser: function() {
         const db = firebase.firestore();
-
-        return db.collection('volunteers').get(data=>{
-            console.log("shas")
-            console.log(data);
-        })
+        return db.collection('volunteers').get();
+      
     }
 };
 
