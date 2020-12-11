@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect } from 'react';
 import User from './Components/Volunteer'
 import GetVolunteers from './Components/GetVolunteers'
- 
+ import Weather from "./Weather/App"
 function App() {
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -23,6 +23,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/volunteer' component={User} />
           <Route exact path='/volunteer_list' component={GetVolunteers} />
+          <Route exact path='/weather' component={Weather} />
         </Switch>
       </Router>
     </main>
