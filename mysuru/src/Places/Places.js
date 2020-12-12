@@ -41,7 +41,7 @@ export default function Places() {
                 const targets = document.querySelectorAll('.loc-card');
                 targets.forEach(lazyLoad);
             });
-    }, [])
+    },[])
 
     return (
         <>

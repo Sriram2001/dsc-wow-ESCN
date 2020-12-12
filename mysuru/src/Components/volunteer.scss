@@ -1,0 +1,44 @@
+.places{
+    h1{
+        font-family: 'Roboto Slab', serif;
+        font-size: 48px;
+        margin-top: 35px;
+        margin-bottom: 60px;
+    }
+    &-cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-auto-rows: auto;
+        grid-gap: 35px;
+        
+    }
+
+}
+
+.place{
+    img{
+        width:60%;
+        margin: 0 auto;
+        display: block;
+        @media screen and (max-width: 760px){
+            width: 100%;
+        }
+    }
+    h1{
+        font-size: 48px;
+        font-family: 'Roboto Slab', serif;
+        text-align: center;
+    }
+
+    h4{
+        font-size: 48px;
+        font-family: 'Roboto Slab', serif;
+        text-align: center;
+    }
+
+    i{
+        font-size: 48px;
+        font-family: 'Roboto Slab', serif;
+        text-align: center; 
+    }
+}

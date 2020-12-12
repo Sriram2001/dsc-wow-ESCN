@@ -8,7 +8,7 @@ const StyledMenu = styled.nav`
     flex-direction: column;
     z-index: 1;
     justify-content: center;
-    background: #f58026;
+    background: #1490e4;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
     height: 100vh;
     text-align: left;
@@ -46,15 +46,15 @@ const Menu = ({ open, setOpen }) => {
             <Link to="/" onClick={() => setOpen(!open)}>
                 Home
             </Link>
-            <Link to="/places" onClick={() => setOpen(!open)}>
-                Places
+            <Link to="/events" onClick={() => setOpen(!open)}>
+                Events
             </Link>
-            <Link to="/weather" onClick={() => setOpen(!open)}>
-                Weather
+            <Link to="/members" onClick={() => setOpen(!open)}>
+                Team
             </Link>
-            {/* <Link to="/timeline" onClick={() => setOpen(!open)}>
+            <Link to="/timeline" onClick={() => setOpen(!open)}>
                 Timeline
-            </Link> */}
+            </Link>
         </StyledMenu>
     );
 };
@@ -81,7 +81,7 @@ const StyledBurger = styled.button`
     div {
         width: 2rem;
         height: 0.25rem;
-        background: ${({ open }) => (open ? "white" : "#f58026")};
+        background: ${({ open }) => (open ? "white" : "#1490e4")};
         border-radius: 10px;
         transition: all 0.3s linear;
         position: relative;
