@@ -10,6 +10,7 @@
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         grid-auto-rows: auto;
         grid-gap: 35px;
+        
     }
 
 }
@@ -28,8 +29,16 @@
         font-family: 'Roboto Slab', serif;
         text-align: center;
     }
-    p{
-        font-size: 16px;
-        font-family: 'Open Sans', sans-serif;
+
+    h4{
+        font-size: 48px;
+        font-family: 'Roboto Slab', serif;
+        text-align: center;
+    }
+
+    i{
+        font-size: 48px;
+        font-family: 'Roboto Slab', serif;
+        text-align: center; 
     }
 }

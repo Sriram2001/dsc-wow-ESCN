@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Result from './Result';
 import NotFound from './NotFound';
 import './App.scss'
-
+import Nav from '../Nav/Nav';
 
 
 
@@ -110,13 +110,15 @@ class Weather extends React.Component {
   render() {
     const { value, weatherInfo, error } = this.state;
     return (
-
-      <section className="weather">
-        <WeatherWrapper className="weatherInfo">
-          {weatherInfo && <Result weather={weatherInfo} />}
-          {error && <NotFound error={error} />}
-        </WeatherWrapper>
-      </section>
+      <>
+        <Nav sticky="false" transp="true" />
+        <section className="weather">
+          <WeatherWrapper className="weatherInfo">
+            {weatherInfo && <Result weather={weatherInfo} />}
+            {error && <NotFound error={error} />}
+          </WeatherWrapper>
+        </section>
+      </>
     );
   }
 }
