@@ -48,8 +48,6 @@ export default function User() {
   const handleChange = (e) => {
     //  console.log(e)
     if (e.target.id === 'firstname') {
-      VolunteerService.getuser();
-
       setFirstname(e.target.value);
     }
     else if (e.target.id === 'lastname') {
