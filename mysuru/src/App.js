@@ -1,6 +1,7 @@
 import './App.scss';
 import Home from './Home/Home';
-import Nav from './Nav/Nav';
+import Places from './Places/Places';
+import Nav from './Components/Nav/Nav';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect } from 'react';
 import User from './Components/Volunteer'
@@ -11,7 +12,6 @@ function App() {
     window.addEventListener('resize', () => {
       document.querySelector(':root').style
         .setProperty('--vh', window.innerHeight / 100 + 'px');
-      console.log(window.innerHeight);
     })
   }, [])
 
@@ -21,6 +21,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/places' component={Places} />
           <Route exact path='/volunteer' component={User} />
         </Switch>
       </Router>

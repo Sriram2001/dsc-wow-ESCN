@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import logo from '../assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
 import './Nav.scss';
 
 export default function Nav() {
