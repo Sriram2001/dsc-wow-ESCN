@@ -7,10 +7,10 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 
 export default function Footer() {
     const Footer = styled.footer`
-        margin-top: 50px;
+        /* margin-top: 50px; */
         width: 100%;
         min-height: 300px;
-        background-color: white;
+        background-color: #131111;
         font-size: 20px;
         font-family: 'Open Sans', sans-serif;
         color: #ad7d52;
