@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchCity from './SearchCity';
-import device from './Devices';
 import Result from './Result';
 import NotFound from './NotFound';
-import Background from '../assets/back.jpg';
 import './App.scss'
 
 
