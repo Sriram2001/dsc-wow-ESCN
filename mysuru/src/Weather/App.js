@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchCity from './SearchCity';
-import device from './Devices';
+// import SearchCity from './SearchCity';
+// import device from './Devices';
 import Result from './Result';
 import NotFound from './NotFound';
-import Background from '../assets/back.jpg';
+// import Background from '../assets/back.jpg';
 import './App.scss'
 
 
@@ -68,9 +68,8 @@ class Weather extends React.Component {
         ];
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const currentDate = new Date();
-        const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${
-          months[currentDate.getMonth()]
-        }`;
+        const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]
+          }`;
         const sunset = new Date(data1.sys.sunset * 1000).toLocaleTimeString().slice(0, 5);
         const sunrise = new Date(data1.sys.sunrise * 1000).toLocaleTimeString().slice(0, 5);
 
@@ -107,7 +106,6 @@ class Weather extends React.Component {
 
 
   componentDidMount() {
-    console.log("shashikanth")
     this.handleSearchCity()
   }
 
@@ -115,9 +113,9 @@ class Weather extends React.Component {
   render() {
     const { value, weatherInfo, error } = this.state;
     return (
-      
-        <section >
-        <WeatherWrapper>
+
+      <section className="weather">
+        <WeatherWrapper className="weatherInfo">
           {weatherInfo && <Result weather={weatherInfo} />}
           {error && <NotFound error={error} />}
         </WeatherWrapper>

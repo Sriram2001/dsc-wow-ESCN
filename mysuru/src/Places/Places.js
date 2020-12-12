@@ -2,6 +2,7 @@ import Card from '../Components/Cards/Location';
 import './Places.scss';
 import firebase from '../Components/Firebase/firebase';
 import { useEffect, useState } from 'react';
+import Nav from '../Nav/Nav';
 
 export default function Places() {
     const [places, setPlaces] = useState([]);
@@ -38,10 +39,14 @@ export default function Places() {
     }, [])
 
     return (
-        <div className="places container">
-            <div className="places-cards">
-                {places.map((p, idx) => <Card key={idx} location={p} />)}
+        <>
+            <Nav sticky="true" transp="false" />
+            <div className="places container">
+                <h1>Explore Locations in Mysuru</h1>
+                <div className="places-cards">
+                    {places.map((p, idx) => <Card key={idx} location={p} />)}
+                </div>
             </div>
-        </div>
+        </>
     )
 }

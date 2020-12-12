@@ -1,32 +1,25 @@
-*
-  {box-sizing: border-box;
-  padding: 0;
-  margin: 0  ;
-  font-family: 'Montserrat', sans-serif;
-  } 
-
-  body
+ .weather
   {min-height: 100vh;
   margin: 5 5;
   position: relative;
   @media (min-width: 768px)
     {margin: 0 0}
+    section{
+      margin-top: 0;
+      margin-left:0;
+      height: 135vh;
+      width: 100%;
+      height: calc(100 * var(--vh, 1vh));
+      background-image: url(../assets/back.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
-section{
-  margin-top: 0;
-  margin-left:0;
-  height: 135vh;
-  width: 100%;
-  // height: calc(100 * var(--vh, 1vh));
-  background-image: url(../assets/back.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
   
 

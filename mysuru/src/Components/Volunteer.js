@@ -100,10 +100,7 @@ export default function User() {
       setPhone("")
       setDesc("")
       console.log(data)
-    });;
-
-
-
+    });
   }
 
 

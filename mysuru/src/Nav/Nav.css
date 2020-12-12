@@ -1,0 +1,103 @@
+.nav {
+    height: 80px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 90%; */
+  }
+  .nav .nav-container .clubLogo {
+    display: flex;
+    align-items: center;
+  }
+  .nav .nav-container .clubLogo .logo {
+    width: 120px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% 60%;
+  }
+  .nav .nav-container .clubLogo h1 {
+    font-size: 25px;
+  }
+  .nav .nav-container .links {
+    margin-right: 5px;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  .nav .nav-container .links a {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    overflow: hidden;
+    position: relative;
+    /* color: #1490e4; */
+  }
+  .nav .nav-container .links a::before {
+    content: " ";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0%;
+    height: 0;
+    background-color: #f58026;
+    transition: all 0.5s;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+  
+  .nav .nav-container .links a:hover::before {
+    width: 300%;
+    height: 300%;
+  }
+  .nav .nav-container .links a:hover {
+    /* text-shadow: 2px 2px 4px #00000048; */
+    color: white !important;
+    /* background-color: #1490e4; */
+  }
+  .nav-sticky {
+    top: 0;
+    position: sticky;
+    z-index: 1;
+  }
+  .nav-fixed {
+    top: 0;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  /* Styles for mobile nav */
+  
+  .mnav {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    /* font-family: Montserrat, sans-serif; */
+  }
+  .mnav .logo {
+    width: 42px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+  .mnav .mnav-menu {
+    color: #f58026;
+    font-size: 30px;
+  }
+  

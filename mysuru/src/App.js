@@ -1,12 +1,14 @@
 import './App.scss';
 import Home from './Home/Home';
 import Places from './Places/Places';
-import Nav from './Components/Nav/Nav';
+// import Nav from './Components/Nav/Nav';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect } from 'react';
-import User from './Components/Volunteer'
-import GetVolunteers from './Components/GetVolunteers'
- import Weather from "./Weather/App"
+import User from './Components/Volunteer';
+import GetVolunteers from './Components/GetVolunteers';
+import Weather from "./Weather/App";
+import UserProvider from './Services/userContext';
+import SignIn from './Forms/SignIn';
 function App() {
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -17,16 +19,19 @@ function App() {
 
   return (
     <main>
-      <Nav />
-      <Router>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/places' component={Places} />
-          <Route exact path='/volunteer' component={User} />
-          <Route exact path='/volunteer_list' component={GetVolunteers} />
-          <Route exact path='/weather' component={Weather} />
-        </Switch>
-      </Router>
+      {/* <Nav /> */}
+      <UserProvider>
+        <Router>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/places' component={Places} />
+            <Route exact path='/weather' component={Weather} />
+            <Route exact path='/volunteer' component={User} />
+            <Route exact path='/volunteer_list' component={GetVolunteers} />
+            <Route exact path="/signin" component={SignIn} />
+          </Switch>
+        </Router>
+      </UserProvider>
     </main>
   );
 }
