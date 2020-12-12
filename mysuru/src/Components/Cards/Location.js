@@ -1,4 +1,6 @@
 import './Location.scss';
+import { Link } from 'react-router-dom';
+
 export default function Location({ location }) {
     return (
         <article className="loc-card">
@@ -10,7 +12,9 @@ export default function Location({ location }) {
             <div className="loc-card__info">
                 <span className="loc-card__category">{location.type}</span>
                 <h3 className="loc-card__title">{location.name}</h3>
-                <span className="loc-card__by"><a href="#" className="loc-card__author" title="author">More Details</a></span>
+                <span className="loc-card__by">
+                    <Link className="loc-card__author" to={`/place/${location.Id}`}>More Details</Link>
+                </span>
             </div>
         </article>
 

@@ -31,7 +31,12 @@ export default function Places() {
                 if (querySnapshot.empty) {
                     setPlaces([]);
                 } else {
-                    setPlaces(querySnapshot.docs.map(d => d.data()));
+                    setPlaces(querySnapshot.docs.map(d => {
+                        return {
+                            ...d.data(),
+                            Id: d.id
+                        }
+                    }));
                 }
                 const targets = document.querySelectorAll('.loc-card');
                 targets.forEach(lazyLoad);

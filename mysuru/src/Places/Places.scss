@@ -13,3 +13,23 @@
     }
 
 }
+
+.place{
+    img{
+        width:60%;
+        margin: 0 auto;
+        display: block;
+        @media screen and (max-width: 760px){
+            width: 100%;
+        }
+    }
+    h1{
+        font-size: 48px;
+        font-family: 'Roboto Slab', serif;
+        text-align: center;
+    }
+    p{
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+    }
+}

@@ -11,6 +11,8 @@ import UserProvider from './Services/userContext';
 import SignIn from './Forms/SignIn';
 import Question from "./QandA/postquestion"
 import GetQuestions from "./QandA/getquestions"
+import { Place } from './Places/Place';
+import Footer from './Footer/Footer';
 function App() {
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -20,23 +22,27 @@ function App() {
   }, [])
 
   return (
-    <main>
-      {/* <Nav /> */}
-      <UserProvider>
-        <Router>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/places' component={Places} />
-            <Route exact path='/weather' component={Weather} />
-            <Route exact path='/volunteer' component={User} />
-            <Route exact path='/volunteer_list' component={GetVolunteers} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path='/Q&A' component={Question} />
-            <Route exact path='/questions' component={GetQuestions} />
-          </Switch>
-        </Router>
-      </UserProvider>
-    </main>
+    <>
+      <main>
+        {/* <Nav /> */}
+        <UserProvider>
+          <Router>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/places' component={Places} />
+              <Route exact path='/weather' component={Weather} />
+              <Route exact path='/volunteer' component={User} />
+              <Route exact path='/volunteer_list' component={GetVolunteers} />
+              <Route exact path="/signin" component={SignIn} />
+              <Route exact path='/Q&A' component={Question} />
+              <Route exact path='/questions' component={GetQuestions} />
+              <Route exact path="/place/:Id" exact component={Place} />
+            </Switch>
+            <Footer />
+          </Router>
+        </UserProvider>
+      </main>
+    </>
   );
 }
 
