@@ -1,11 +1,13 @@
 import PlacesService from "../Services/Places"
 
-export default function GetVolunteers() {
+export default function GetQuestions() {
 
 
     const places_list = [];
     const places_id = []
 
+
+    
     PlacesService.getplaces().then((snapshot) => {
         snapshot.forEach(doc=>{
             

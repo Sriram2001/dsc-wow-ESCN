@@ -9,6 +9,8 @@ import GetVolunteers from './Components/GetVolunteers';
 import Weather from "./Weather/App";
 import UserProvider from './Services/userContext';
 import SignIn from './Forms/SignIn';
+import Question from "./QandA/postquestion"
+import GetQuestions from "./QandA/getquestions"
 function App() {
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -29,6 +31,8 @@ function App() {
             <Route exact path='/volunteer' component={User} />
             <Route exact path='/volunteer_list' component={GetVolunteers} />
             <Route exact path="/signin" component={SignIn} />
+            <Route exact path='/Q&A' component={Question} />
+            <Route exact path='/questions' component={GetQuestions} />
           </Switch>
         </Router>
       </UserProvider>
