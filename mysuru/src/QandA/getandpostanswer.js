@@ -319,7 +319,7 @@ let question = (
     ))
 
  return (
-<div>
+<div style={{backgroundImage: "url(" + "https://papers.co/wallpaper/papers.co-vs20-paint-abstract-background-htc-pink-blue-pattern-41-iphone-wallpaper.jpg" + ")"}}>
     
 <div style={{display:"flex",flexDirection:"column",justifyContent:"space-evenly"}}>
 
@@ -335,12 +335,11 @@ let question = (
 </Card>
 </div>
 
-
 <h2 style={{padding:20,display:"flex",flexDirection:"row",justifyContent:"space-evenly"}}>
 Answers</h2>
- <div>
+ <div >
 <div style={divStyle}>
-   <Card style={{backgroundColor:"lightgray"}}>
+   <Card >
    <List  style={listStyle}>
     {answers}       
 </List>

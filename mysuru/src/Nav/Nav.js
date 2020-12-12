@@ -1,30 +1,36 @@
-import { useState, useEffect } from 'react';
-import logo from '../assets/images/logo.png';
-import './Nav.scss';
+import React, { useEffect, useRef, useState } from "react";
+import BigNav from "./NavBig";
+import SmallNav from "./SmallNav";
+import "./Nav.css";
 
-export default function Nav() {
-    const [scroll, setScroll] = useState(true);
+const Nav = (props) => {
+  let initialValue;
+  const mobileBreakPoint = 768;
+  if (window.innerWidth < mobileBreakPoint) {
+    initialValue = true;
+  } else {
+    initialValue = false;
+  }
+  const [navSize, setnavSize] = useState(initialValue);
+  const navRef = useRef();
+  navRef.current = navSize;
+  useEffect(() => {
+    const handleResize = () => {
+      const show = window.innerWidth < mobileBreakPoint;
+      if (navRef.current !== show) {
+        setnavSize(show);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-    useEffect(() => {
-        document.addEventListener("scroll", () => {
-            const scrollCheck = window.scrollY < 300
-            if (scrollCheck !== scroll) {
-                setScroll(scrollCheck)
-            }
-        })
-    }, [scroll]);
-
-    return (
-        <nav className={`nav ${scroll ? '' : 'nav-bg'}`}>
-            <ul className="nav-left">
-                <li>Explore</li>
-                <li>Guide</li>
-            </ul>
-            <img className="nav-logo" src={logo} alt='logo'></img>
-            <ul className="nav-right">
-                <li>Places</li>
-                <li>Places</li>
-            </ul>
-        </nav>
-    )
-}
+  return navSize ? (
+    <SmallNav sticky={props.sticky} transp={props.transp} />
+  ) : (
+      <BigNav sticky={props.sticky} transp={props.transp} />
+    );
+};
+export default Nav;

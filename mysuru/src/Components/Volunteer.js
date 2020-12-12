@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import VolunteerService from "../Services/Volunteer"
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,7 +8,6 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-const { useState } = React;
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,92 +32,81 @@ const useStyles = makeStyles((theme) => ({
 
 export default function User() {
 
-   const classes = useStyles();
+  const classes = useStyles();
 
 
-   let [firstname, setFirstname] = useState('');
-   let [lastname,setLastname] = useState('')
-   let [email, setEmail] = useState('');
-   let [place,setPlace] = useState('')
-   let [phone,setPhone] = useState('')
-   let [description,setDesc] = useState('')
+  let [firstname, setFirstname] = useState('');
+  let [lastname, setLastname] = useState('')
+  let [email, setEmail] = useState('');
+  let [place, setPlace] = useState('')
+  let [phone, setPhone] = useState('')
+  let [description, setDesc] = useState('')
 
 
-   const handleChange = (e) => {
+  const handleChange = (e) => {
     //  console.log(e)
-     if(e.target.id === 'firstname')
-     {
-      
-        
+    if (e.target.id === 'firstname') {
       setFirstname(e.target.value);
-     }
-     else if(e.target.id === 'lastname')
-     {
+    }
+    else if (e.target.id === 'lastname') {
       setLastname(e.target.value);
-     }
-     else if(e.target.id === 'email')
-     {
-        setEmail(e.target.value);
-     }
-     else if(e.target.id === 'place')
-     {
-        setPlace(e.target.value);
-     }
-     else if(e.target.id === 'phone')
-     {
-        setPhone(e.target.value);
-     }
-     else if(e.target.id === 'desc')
-     {
-        setDesc(e.target.value);
-     }
-   }
+    }
+    else if (e.target.id === 'email') {
+      setEmail(e.target.value);
+    }
+    else if (e.target.id === 'place') {
+      setPlace(e.target.value);
+    }
+    else if (e.target.id === 'phone') {
+      setPhone(e.target.value);
+    }
+    else if (e.target.id === 'desc') {
+      setDesc(e.target.value);
+    }
+  }
 
 
-      
-    
 
 
-      const addUser = (e) =>{
-        e.preventDefault()
-        
-
-        const state = {
-          email: email,
-          firstname: firstname,
-          lastname: lastname,
-          place:place,
-          phone:phone,
-          description:description
-         };
-        VolunteerService.adduser(state).catch(err=>{
-          setFirstname("")
-          setLastname("")
-          setEmail("")
-          setPlace("")
-          setPhone("")
-          setDesc("")
-          console.log(err)
-      }).then(data=>{
-        setFirstname("")
-        setLastname("")
-        setEmail("")
-        setPlace("")
-        setPhone("")
-        setDesc("")
-          console.log(data)
-      }); ;
 
 
-       
-      }
+  const addUser = (e) => {
+    e.preventDefault()
 
 
-    return (
-      <Container component="main" maxWidth="xs">
+    const state = {
+      email: email,
+      firstname: firstname,
+      lastname: lastname,
+      place: place,
+      phone: phone,
+      description: description
+    };
+    VolunteerService.adduser(state).catch(err => {
+      setFirstname("")
+      setLastname("")
+      setEmail("")
+      setPlace("")
+      setPhone("")
+      setDesc("")
+      console.log(err)
+    }).then(data => {
+      setFirstname("")
+      setLastname("")
+      setEmail("")
+      setPlace("")
+      setPhone("")
+      setDesc("")
+      console.log(data)
+    });
+  }
+
+
+  return (
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
- 
+
         <Typography component="h1" variant="h5">
           Sign up As a Volunteer
         </Typography>
@@ -134,7 +122,7 @@ export default function User() {
                 id="firstname"
                 label="First Name"
                 autoFocus
-                value={firstname} 
+                value={firstname}
                 onChange={handleChange}
               />
             </Grid>
@@ -146,7 +134,7 @@ export default function User() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lastname"
-                value={lastname} 
+                value={lastname}
                 onChange={handleChange}
               />
             </Grid>
@@ -158,9 +146,9 @@ export default function User() {
                 id="email"
                 label="Email Address"
                 name="email"
-                type ="email"
+                type="email"
                 autoComplete="email"
-                value={email} 
+                value={email}
                 onChange={handleChange}
               />
             </Grid>
@@ -174,7 +162,7 @@ export default function User() {
                 name="place"
                 type="text"
                 autoComplete="Place"
-                value={place} 
+                value={place}
                 onChange={handleChange}
               />
             </Grid>
@@ -188,12 +176,12 @@ export default function User() {
                 type="tel"
                 id="phone"
                 autoComplete="current-phone"
-                value={phone} 
+                value={phone}
                 onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
-            <TextField
+              <TextField
                 variant="outlined"
                 required
                 fullWidth
@@ -202,7 +190,7 @@ export default function User() {
                 type="text"
                 id="desc"
                 autoComplete="description"
-                value={description} 
+                value={description}
                 onChange={handleChange}
               />
             </Grid>
@@ -213,19 +201,19 @@ export default function User() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick = {addUser}
+            onClick={addUser}
           >
             Sign Up
           </Button>
-         
+
         </form>
       </div>
       <Box mt={5}>
       </Box>
     </Container>
-        );
-      
-   }
+  );
+
+}
 
 
 
@@ -235,20 +223,20 @@ export default function User() {
 
 
 
-{/* <form onSubmit={this.addUser}>
-<input
-  type="text"
-  name="fullname"
-  placeholder="Full name"
-  onChange={this.updateInput}
-  value={this.state.fullname}
-/>
-<input
-  type="email"
-  name="email"
-  placeholder="email"
-  onChange={this.updateInput}
-  value={this.state.email}
-/>
-  <button type="submit">Submit</button>
-</form> */}
+// {/* <form onSubmit={this.addUser}>
+// <input
+//   type="text"
+//   name="fullname"
+//   placeholder="Full name"
+//   onChange={this.updateInput}
+//   value={this.state.fullname}
+// />
+// <input
+//   type="email"
+//   name="email"
+//   placeholder="email"
+//   onChange={this.updateInput}
+//   value={this.state.email}
+// />
+//   <button type="submit">Submit</button>
+// </form> */}

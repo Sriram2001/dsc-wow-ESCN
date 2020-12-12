@@ -1,0 +1,15 @@
+.places{
+    h1{
+        font-family: 'Roboto Slab', serif;
+        font-size: 48px;
+        margin-top: 35px;
+        margin-bottom: 60px;
+    }
+    &-cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-auto-rows: auto;
+        grid-gap: 35px;
+    }
+
+}

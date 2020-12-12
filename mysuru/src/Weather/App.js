@@ -65,9 +65,8 @@ class Weather extends React.Component {
         ];
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const currentDate = new Date();
-        const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${
-          months[currentDate.getMonth()]
-        }`;
+        const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]
+          }`;
         const sunset = new Date(data1.sys.sunset * 1000).toLocaleTimeString().slice(0, 5);
         const sunrise = new Date(data1.sys.sunrise * 1000).toLocaleTimeString().slice(0, 5);
 
@@ -104,7 +103,6 @@ class Weather extends React.Component {
 
 
   componentDidMount() {
-    console.log("shashikanth")
     this.handleSearchCity()
   }
 
@@ -112,9 +110,9 @@ class Weather extends React.Component {
   render() {
     const { value, weatherInfo, error } = this.state;
     return (
-      
-        <section >
-        <WeatherWrapper>
+
+      <section className="weather">
+        <WeatherWrapper className="weatherInfo">
           {weatherInfo && <Result weather={weatherInfo} />}
           {error && <NotFound error={error} />}
         </WeatherWrapper>

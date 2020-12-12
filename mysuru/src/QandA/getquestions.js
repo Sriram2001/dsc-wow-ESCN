@@ -5,6 +5,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import "../QandA/questions.scss"
+import Card from '@material-ui/core/Card';
+
 // import { Divider, Header, Image, Segment } from 'semantic-ui-react'
 
 const { useState } = React;
@@ -50,8 +52,8 @@ componentDidMount(){
      this.db = firebase.firestore();
     this.db.collection('questions').get().then((snapshot) => {
         snapshot.forEach(doc=>{
-           temp1.push(doc.data());
-           temp2.push(doc.id);
+            temp1.push(doc.data());
+            temp2.push(doc.id);
     })
     this.setState({
         questions_list :temp1,
@@ -76,6 +78,8 @@ render(){
     // return null;
 
     let questions = this.state.questions_list.map((ele, i) => (
+        <div style={{padding:10}}>
+        <Card>
         <div key ={this.state.questions_list_id[i]} onClick={ () => this.handleClick(i) }>
         <ListItem button >
         <div>
@@ -99,21 +103,26 @@ render(){
         </div>
         </div>
         </ListItem>
-        <Divider />
         </div>
+        </Card>
+       </div>
+
     ))
 
  return (
-<div>
+<div style={{backgroundImage: "url(" + "https://papers.co/wallpaper/papers.co-vs20-paint-abstract-background-htc-pink-blue-pattern-41-iphone-wallpaper.jpg" + ")"}} >
 <h2 style={{padding:20,display:"flex",flexDirection:"row",justifyContent:"space-evenly"}}>
 Mysore Tourism FAQs
 </h2>
- <div>
+ <div >
 <div style={divStyle}>
- <List  style={listStyle}>
+<Card style={{backgroundImage: "url(" + "https://mcdn.wallpapersafari.com/medium/62/26/skDxEZ.jpg" + ")"}}>
+<List  style={listStyle}>
     {questions}       
-
 </List>
+</Card> 
+
+
 </div>
 </div>
 </div>
