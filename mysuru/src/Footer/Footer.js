@@ -107,9 +107,16 @@ export default function Footer() {
             justify-content: space-evenly;
             align-items: center;
             font-size: 16px;
+            p{
+                display: flex;
+                svg{
+                    margin-right: 5px;
+                }
+            }
         }
         & a {
             color: #f58026;
+            display: inline-block;
             transition: all 0.2s ease-in-out;
         }
         & a:hover {
