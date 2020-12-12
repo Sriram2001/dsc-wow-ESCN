@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import imgUrl from "../assets/images/logo.png";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const StyledMenu = styled.nav`
     display: flex;
     flex-direction: column;
     z-index: 1;
     justify-content: center;
-    background: #1490e4;
+    background: #131111;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
     height: 100vh;
     text-align: left;
@@ -35,7 +35,7 @@ const StyledMenu = styled.nav`
         margin-left: 15%;
 
         &:hover {
-            color: #b3d3f6;
+            color: #f58026;
         }
     }
 `;
@@ -43,18 +43,18 @@ const StyledMenu = styled.nav`
 const Menu = ({ open, setOpen }) => {
     return (
         <StyledMenu open={open}>
-            <Link to="/" onClick={() => setOpen(!open)}>
-                Home
-            </Link>
-            <Link to="/events" onClick={() => setOpen(!open)}>
-                Events
-            </Link>
-            <Link to="/members" onClick={() => setOpen(!open)}>
-                Team
-            </Link>
-            <Link to="/timeline" onClick={() => setOpen(!open)}>
-                Timeline
-            </Link>
+            <Link to="/places" onClick={() => setOpen(!open)}>
+                Places
+          </Link>
+            <Link to="/guide" onClick={() => setOpen(!open)}>
+                Guide
+          </Link>
+            <Link to="/questions" onClick={() => setOpen(!open)}>
+                Forum
+          </Link>
+            <Link to="/weather" onClick={() => setOpen(!open)}>
+                Weather
+          </Link>
         </StyledMenu>
     );
 };
@@ -81,7 +81,7 @@ const StyledBurger = styled.button`
     div {
         width: 2rem;
         height: 0.25rem;
-        background: ${({ open }) => (open ? "white" : "#1490e4")};
+        background: ${({ open }) => (open ? "white" : "#f58026")};
         border-radius: 10px;
         transition: all 0.3s linear;
         position: relative;
@@ -124,6 +124,8 @@ const MobileNav = (props) => {
     const navRef = useRef();
     navRef.current = navBackground;
 
+    const history = useHistory();
+
     // Code to handle scroll event
     useEffect(() => {
         const handleScroll = () => {
@@ -161,7 +163,7 @@ const MobileNav = (props) => {
                 <Burger open={open} setOpen={setOpen} />
                 <Menu open={open} setOpen={setOpen} />
             </div>
-            <span className="logo" style={{ backgroundImage: imageUrl }} />
+            <span className="logo" style={{ backgroundImage: imageUrl }} onClick={() => history.push('/')} />
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import imgUrl from "../assets/images/logo.png";
 
 const Nav = (props) => {
@@ -7,6 +7,7 @@ const Nav = (props) => {
   function classList(...classes) {
     return classes.filter((item) => !!item).join(" ");
   }
+  const history = useHistory();
 
   const imageUrl = `url(${imgUrl})`;
   const [navBackground, setNavBackground] = useState(false);
@@ -66,21 +67,21 @@ const Nav = (props) => {
     >
       <div className="nav-container container">
         <div className="clubLogo">
-          <span className="logo" style={{ backgroundImage: imageUrl }} />
+          <span style={{ cursor: "pointer" }} className="logo" style={{ backgroundImage: imageUrl }} onClick={() => history.push("/")} />
         </div>
         <div className="links">
-          <Link to="/" style={linkStyle}>
-            Home
-          </Link>
           <Link to="/places" style={linkStyle}>
             Places
+          </Link>
+          <Link to="/guide" style={linkStyle}>
+            Guide
+          </Link>
+          <Link to="/questions" style={linkStyle}>
+            Forum
           </Link>
           <Link to="/weather" style={linkStyle}>
             Weather
           </Link>
-          {/* <Link to="/timeline" style={linkStyle}>
-            Timeline
-          </Link> */}
         </div>
       </div>
     </div>
