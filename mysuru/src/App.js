@@ -38,7 +38,7 @@ function App() {
               <Route exact path="/signin" component={SignIn} />
               <Route exact path='/Q&A' component={Question} />
               <Route exact path='/questions' component={GetQuestions} />
-              <Route exact path="/place/:Id" exact component={Place} />
+              <Route exact path="/place/:Id" component={Place} />
               <Route exact path='/answer/:id' component={Getanswer} />
             </Switch>
             <Footer />
