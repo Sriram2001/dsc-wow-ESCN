@@ -300,7 +300,7 @@ export default class Getanswer extends React.Component {
             </div>
 
             <div >
-              <Card style={{ marginBottom: "60px" }}>
+              <Card>
                 <div style={{ padding: "20px" }}>
                   <Typography variant="h5" gutterBottom>
                     Answers:
