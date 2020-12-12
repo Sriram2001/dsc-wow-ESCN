@@ -13,6 +13,8 @@ import Question from "./QandA/postquestion"
 import GetQuestions from "./QandA/getquestions"
 import { Place } from './Places/Place';
 import Footer from './Footer/Footer';
+import Getanswer from "./QandA/getandpostanswer"
+
 function App() {
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -37,6 +39,7 @@ function App() {
               <Route exact path='/Q&A' component={Question} />
               <Route exact path='/questions' component={GetQuestions} />
               <Route exact path="/place/:Id" exact component={Place} />
+              <Route exact path='/answer/:id' component={Getanswer} />
             </Switch>
             <Footer />
           </Router>

@@ -62,9 +62,9 @@ export default function Question() {
      {
         setQues(e.target.value);
      }
-
+     console.log(question)
      let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(regEmail.test(email) && question.length>10){
+        if(regEmail.test(email) && (question.trim()) && question.length>10){
             setValid(false)
         }
         else
@@ -141,6 +141,8 @@ export default function Question() {
                       margin="normal"
                       required
                       fullWidth
+                      multiline
+                      rows={4}
                       name="question"
                       label="question"
                       type="text"

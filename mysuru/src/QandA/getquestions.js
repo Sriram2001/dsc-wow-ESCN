@@ -5,57 +5,127 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import "../QandA/questions.scss"
+import Card from '@material-ui/core/Card';
+
+// import { Divider, Header, Image, Segment } from 'semantic-ui-react'
+
 const { useState } = React;
 
-export default function Question() {
 
-   
-    const db = firebase.firestore();
-    const volunteer_list = [];
-    const volunteer_list_id = []
+const listStyle = {
+    display: "flex",
+    alignItems: "space-evenly",
+    backgroundColor: "blue($color:  #1e0cb8)",
+    justifyContent: "center",
+    flexDirection:"column"
 
-    db.collection('volunteers').get().then((snapshot) => {
+}
+
+const ListItemSTyle= {
+    display: "flex",
+    alignItems: "center",
+    backgroundColor: "blue($color:  #1e0cb8)",
+    justifyContent: "space-evenly",
+
+}
+
+const divStyle= {
+    padding:30,
+}
+
+export default class Foo extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            questions_list :[],
+            questions_list_id :[]
+        }
+    }
+ 
+         db = null
+    // let [questions_list, setValue] = useState([]);
+    // let [questions_list_id, setId] = useState([]);
+
+componentDidMount(){
+    const temp1= []
+    const temp2 = []
+     this.db = firebase.firestore();
+    this.db.collection('questions').get().then((snapshot) => {
         snapshot.forEach(doc=>{
-            
-            volunteer_list.push(doc.data());
-            volunteer_list_id.push(doc.id);
+            temp1.push(doc.data());
+            temp2.push(doc.id);
     })
-    console.log(volunteer_list);
-    console.log(volunteer_list_id)
-    
+    this.setState({
+        questions_list :temp1,
+        questions_list_id :temp2
+    });
+
     })
-
-
+}
    
+handleClick = (id) => {
+    console.log(id)
+    console.log(this.state.questions_list_id[id])
+    const path = `/answer/${this.state.questions_list_id[id]}`
+    this.props.history.push(path);
+}
 
-        return (
-<div>
- <List >
-  <ListItem button>
-    <ListItemText primary="Inbox" />
-  </ListItem>
-  <Divider />
-  <ListItem button divider>
-    <ListItemText primary="Drafts" />
-  </ListItem>
-  <ListItem button>
-    <ListItemText primary="Trash" />
-  </ListItem>
-  <Divider light />
-  <ListItem button>
-    <ListItemText primary="Spam" />
-  </ListItem>
+
+
+render(){
+
+    // if(!this.questions_list_id.length)
+    // return null;
+
+    let questions = this.state.questions_list.map((ele, i) => (
+        <div style={{padding:10}}>
+        <Card>
+        <div key ={this.state.questions_list_id[i]} onClick={ () => this.handleClick(i) }>
+        <ListItem button >
+        <div>
+        <div>
+        <ListItemText primary={"Q. "+(i+1).toString()+")  "+ele['question']} />
+        </div>
+        <div style={{fontSize:12,float:"right"}}>
+        <div style={{color:"blue"}}> 
+        <i>
+        {ele['email']}
+        </i>
+        </div>
+        <div style={{color:"red"}}>
+        <i>
+        {(new Date(ele['date'])).toLocaleString()}
+        </i>
+        </div>
+        </div>
+        <div style={{float:"left"}}>
+            {/* // button should behere */}
+        </div>
+        </div>
+        </ListItem>
+        </div>
+        </Card>
+       </div>
+
+    ))
+
+ return (
+<div style={{backgroundImage: "url(" + "https://papers.co/wallpaper/papers.co-vs20-paint-abstract-background-htc-pink-blue-pattern-41-iphone-wallpaper.jpg" + ")"}} >
+<h2 style={{padding:20,display:"flex",flexDirection:"row",justifyContent:"space-evenly"}}>
+Mysore Tourism FAQs
+</h2>
+ <div >
+<div style={divStyle}>
+<Card style={{backgroundImage: "url(" + "https://mcdn.wallpapersafari.com/medium/62/26/skDxEZ.jpg" + ")"}}>
+<List  style={listStyle}>
+    {questions}       
 </List>
-                </div>
-          );
-      
-   }
+</Card> 
 
 
-
-
-
-
-
-
-
+</div>
+</div>
+</div>
+ )
+}
+}
