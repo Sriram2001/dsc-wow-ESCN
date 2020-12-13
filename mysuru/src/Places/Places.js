@@ -41,15 +41,17 @@ export default function Places() {
                 const targets = document.querySelectorAll('.loc-card');
                 targets.forEach(lazyLoad);
             });
-    },[])
+    }, [])
 
     return (
         <>
             <Nav sticky="true" transp="false" />
-            <div className="places container">
-                <h1>Explore Locations in Mysuru</h1>
-                <div className="places-cards">
-                    {places.map((p, idx) => <Card key={idx} location={p} />)}
+            <div className="places">
+                <div className="container">
+                    <h1>Explore Locations in Mysuru</h1>
+                    <div className="places-cards">
+                        {places.map((p, idx) => <Card key={idx} location={p} />)}
+                    </div>
                 </div>
             </div>
         </>

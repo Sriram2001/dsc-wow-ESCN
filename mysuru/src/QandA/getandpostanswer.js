@@ -294,7 +294,7 @@ export default class Getanswer extends React.Component {
             <div style={{ padding: "20px 0", display: "flex", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center" }}>
               <Card style={{ width: "100%" }}>
                 {question}
-                <p style={{ cursor: "pointer", color: "#0077cc", fontFamily: "Roboto, sans-serif", fontSize: "13px", padding: "20px", paddingTop: "0" }} onClick={() => this.setState({ visible: true })}>Write an answer</p>
+                {!this.state.visible && <p style={{ cursor: "pointer", color: "#0077cc", fontFamily: "Roboto, sans-serif", fontSize: "13px", padding: "20px", paddingTop: "0" }} onClick={() => this.setState({ visible: true })}>Write an answer</p>}
                 {this.state.visible && part}
               </Card>
             </div>

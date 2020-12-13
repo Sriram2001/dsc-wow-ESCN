@@ -10,7 +10,7 @@ import Nav from '../Nav/Nav';
 const WeatherWrapper = styled.div`
   max-width: 1500px;
   margin: 0 0;
-  height: calc(100vh - 64px);
+  height: calc(100 * var(--vh, 1vh));
   width: 100%;
   position: relative;
   padding: 0 20px 0 20px;

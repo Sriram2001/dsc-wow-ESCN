@@ -1,4 +1,14 @@
 .places{
+    min-height: 100vh;
+    min-height: calc(100 * var(--vh, 1vh));
+    background-color: rgb(240, 193, 64);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/mysurutourism-7df77.appspot.com/o/Trianglify%20%E2%80%93%20Generate%20colorful%20triangle%20meshes%20for%20SVG%20images%20and%20CSS%20backgrounds%20_%20Productivity%20Tools%20_%20Designify.jpeg?alt=media&token=d1bc601a-61f4-47c6-ab3b-71e577ace45a);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-blend-mode: multiply;
+    padding-top: 20px;
+    padding-bottom: 60px;
     h1{
         font-family: 'Roboto Slab', serif;
         font-size: 48px;

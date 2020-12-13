@@ -40,23 +40,6 @@ export const Place = ({ match }) => {
                 <img src={data.imageUrl} alt={data.name} />
                 <p>{data.description}</p>
             </div>
-            {/* <Carousel
-                value={value}
-                onChange={onChange}
-            >
-                <img className="img-example" src={someImage} />
-        ...
-        <img className="img-example" src={anotherImage} />
-            </Carousel>
-            <Dots
-                value={this.state.value}
-                onChange={this.onChange}
-                thumbnails={[
-                    (<img key={1} className="img-example-small" src={abstractImage} />),
-                    ...
-                    (<img key={12} className="img-example-small" src={transportImage} />),
-                ]}
-            /> */}
         </>
 
     )
