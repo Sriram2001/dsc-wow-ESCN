@@ -30,7 +30,7 @@
     width: 45%;
     display: flex;
     justify-content: space-between;
-    z-index: 1;
+    z-index: 10;
   }
   .nav .nav-container .links a {
     font-size: 18px;
@@ -42,6 +42,7 @@
     margin: 5px;
     overflow: hidden;
     position: relative;
+    z-index: 10;
     /* color: #1490e4; */
   }
   .nav .nav-container .links a::before {
@@ -54,8 +55,8 @@
     background-color: #f58026;
     transition: all 0.5s;
     border-radius: 50%;
-    z-index: -1;
     transform: translate(-50%, -50%);
+    z-index: -1;
   }
   
   .nav .nav-container .links a:hover::before {
@@ -65,17 +66,18 @@
   .nav .nav-container .links a:hover {
     /* text-shadow: 2px 2px 4px #00000048; */
     color: white !important;
+    z-index: 13;
     /* background-color: #1490e4; */
   }
   .nav-sticky {
     top: 0;
     position: sticky;
-    z-index: 1;
+    z-index: 10;
   }
   .nav-fixed {
     top: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
   }
   
   /* Styles for mobile nav */

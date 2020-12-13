@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 const StyledMenu = styled.nav`
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: 10;
     justify-content: center;
     background: #131111;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};

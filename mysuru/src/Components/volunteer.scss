@@ -27,6 +27,7 @@
     }
     &-card{
         background-color: #f3d54f !important;
+        position: relative;
     }
     p{
         margin-bottom: 20px;
@@ -36,6 +37,12 @@
         margin-top: 30px;
         margin-bottom: 20px;
         text-transform: capitalize;
+    }
+    .verified{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 13px;
     }
 }
 

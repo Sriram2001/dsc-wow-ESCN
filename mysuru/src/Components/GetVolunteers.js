@@ -9,7 +9,7 @@ import Card from '@material-ui/core/Card';
 import Nav from '../Nav/Nav';
 import { useEffect, useState } from 'react';
 import firebase from '../Components/Firebase/firebase';
-
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import VolunteerService from "../Services/Volunteer"
 
 const useStyles = makeStyles({
@@ -72,22 +72,23 @@ export default function GetVolunteers() {
             {volunteer_list.map((p, idx) => {
               return (
                 <Card className={`${classes.root} guide-card`}>
+                  {p.verified && <p className="verified"><VerifiedUserIcon style={{ fontSize: "13px", marginRight: "3px" }} />Verified</p>}
                   <CardContent>
                     <Typography  >
-                      <h4> {p['name']}</h4>
+                      <h4> {p.name}</h4>
                     </Typography>
                     <Typography style={{ color: "black" }} className={classes.pos} >
-                      <i>{p['place']}</i>
+                      <i>{p.place}</i>
                     </Typography>
                     <Typography className={classes.title} color="black" gutterBottom>
-                      Ph. <b>{p['phone']}</b>
+                      Ph. <b>{p.phone}</b>
                     </Typography>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
-                      {p['email']}
+                      {p.email}
                     </Typography>
                     <Typography variant="body2" component="p">
                       <p>
-                        {p['description']}
+                        {p.description}
                       </p>
                     </Typography>
                   </CardContent>
