@@ -5,6 +5,8 @@ The images of the web and android application are added in the imgs folder.
 The mysuru folder has the source code for the web application.
 The mysuru-android folder has the source code for the android application.
 
+View the deployed website here: https://sriram2001.github.io/dsc-wow-ESCN/
+
 Team name: ESCN
 
 The technologies used are
