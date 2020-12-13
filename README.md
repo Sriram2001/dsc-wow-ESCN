@@ -5,6 +5,8 @@ The images of the web and android application are added in the imgs folder.
 The mysuru folder has the source code for the web application.
 The mysuru-android folder has the source code for the android application.
 
+Team name: ESCN
+
 The technologies used are
 - React
 - Android
@@ -26,5 +28,6 @@ The web application has the following features
 5) Volunteer list page
 6) Live weather updates page
 7) Forum to post questions and answers
+8) Completely mobile responsive
 
 
