@@ -1,44 +1,41 @@
-.places{
+.guide{
+    min-height: 100vh;
+    min-height: calc(100 * var(--vh, 1vh));
+    background-color: rgb(240, 193, 64);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/mysurutourism-7df77.appspot.com/o/Trianglify%20%E2%80%93%20Generate%20colorful%20triangle%20meshes%20for%20SVG%20images%20and%20CSS%20backgrounds%20_%20Productivity%20Tools%20_%20Designify.jpeg?alt=media&token=d1bc601a-61f4-47c6-ab3b-71e577ace45a);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-blend-mode: multiply;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    font-family: 'Open Sans', sans-serif;
+    .container{
+        padding-bottom: 30px;
+    }
     h1{
         font-family: 'Roboto Slab', serif;
         font-size: 48px;
         margin-top: 35px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
     &-cards{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         grid-auto-rows: auto;
         grid-gap: 35px;
-        
+    }
+    &-card{
+        background-color: #f3d54f !important;
+    }
+    p{
+        margin-bottom: 20px;
     }
 
+    h2{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+    }
 }
 
-.place{
-    img{
-        width:60%;
-        margin: 0 auto;
-        display: block;
-        @media screen and (max-width: 760px){
-            width: 100%;
-        }
-    }
-    h1{
-        font-size: 48px;
-        font-family: 'Roboto Slab', serif;
-        text-align: center;
-    }
-
-    h4{
-        font-size: 48px;
-        font-family: 'Roboto Slab', serif;
-        text-align: center;
-    }
-
-    i{
-        font-size: 48px;
-        font-family: 'Roboto Slab', serif;
-        text-align: center; 
-    }
-}

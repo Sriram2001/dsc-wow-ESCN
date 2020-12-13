@@ -66,8 +66,8 @@ const Nav = (props) => {
       style={divStyle}
     >
       <div className="nav-container container">
-        <div className="clubLogo">
-          <span style={{ cursor: "pointer" }} className="logo" style={{ backgroundImage: imageUrl }} onClick={() => history.push("/")} />
+        <div className="clubLogo" style={{ cursor: "pointer" }} >
+          <span className="logo" style={{ backgroundImage: imageUrl }} onClick={() => history.push("/")} />
         </div>
         <div className="links">
           <Link to="/places" style={linkStyle}>

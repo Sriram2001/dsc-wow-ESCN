@@ -1,4 +1,4 @@
-.places{
+.places, .place{
     min-height: 100vh;
     min-height: calc(100 * var(--vh, 1vh));
     background-color: rgb(240, 193, 64);
@@ -9,6 +9,9 @@
     background-blend-mode: multiply;
     padding-top: 20px;
     padding-bottom: 60px;
+}
+
+.places{
     h1{
         font-family: 'Roboto Slab', serif;
         font-size: 48px;
@@ -21,25 +24,29 @@
         grid-auto-rows: auto;
         grid-gap: 35px;
     }
-
+    
 }
 
 .place{
-    img{
-        width:60%;
+    padding-top: 20px;
+    .image{
+        height: 500px;
+        background-color: #e5e5e5;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        @media screen and (max-width: 600px){
+            height: calc(40 * var(--vh, 1vh));
+        }
+    }
+    &-card{
+        width: 90%;
+        padding: 20px;
         margin: 0 auto;
-        display: block;
-        @media screen and (max-width: 760px){
+        margin-top: -50px;
+        @media screen and (max-width: 700px){
             width: 100%;
         }
     }
-    h1{
-        font-size: 48px;
-        font-family: 'Roboto Slab', serif;
-        text-align: center;
-    }
-    p{
-        font-size: 16px;
-        font-family: 'Open Sans', sans-serif;
-    }
 }
+

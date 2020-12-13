@@ -13,78 +13,90 @@ import firebase from '../Components/Firebase/firebase';
 import VolunteerService from "../Services/Volunteer"
 
 const useStyles = makeStyles({
-    root: {
-      minWidth: 275,
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
-    title: {
-      fontSize: 14,
-    },
-    pos: {
-      marginBottom: 12,
-    },
-  });
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
 
 
 export default function GetVolunteers() {
-    const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
 
-    const [volunteer_list, setVolunteer] = useState([]);
-    useEffect(() => {
-        const db = firebase.firestore();
-        db.collection('volunteers').get()
-            .then(function (querySnapshot) {
-                if (querySnapshot.empty) {
-                    setVolunteer([]);
-                } else {
-                    setVolunteer(querySnapshot.docs.map(d => {
-                        return {
-                            ...d.data(),
-                            Id: d.id
-                        }
-                    }));
-                }
-            });
-    }, [])
+  const [volunteer_list, setVolunteer] = useState([]);
+  useEffect(() => {
+    const db = firebase.firestore();
+    db.collection('volunteers').get()
+      .then(function (querySnapshot) {
+        if (querySnapshot.empty) {
+          setVolunteer([]);
+        } else {
+          setVolunteer(querySnapshot.docs.map(d => {
+            return {
+              ...d.data(),
+              Id: d.id
+            }
+          }));
+        }
+      });
+  }, [])
 
-    return (
-        <>
-        <div className="places container" style={{padding:20}}>
-        <h1>Volunteers You Can reach Out</h1>
-        <div className="places-cards">
-            {volunteer_list.map((p, idx) => 
-    <Card className={classes.root} style={{backgroundColor:"lightgoldenrodyellow"}}>
-      <CardContent>
-        <Typography  >
-         <h4> {p['name']}</h4>
-        </Typography>
-        <Typography style={{color:"black"}} className={classes.pos} >
-          <i>{p['place']}</i>
-        </Typography>
-        <Typography className={classes.title} color="black" gutterBottom>
-          Ph. <b>{p['phone']}</b>
-        </Typography>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {p['email']}
-        </Typography>
-        <Typography variant="body2" component="p">
-         <p>
-             {p['description']}
-         </p>
-        </Typography>
-        <br></br>
- 
-      </CardContent>
-    </Card>)}
-        </div>
-    </div>
-    </>  
-)
+  return (
+    <>
+      <Nav sticky="true" transp="false" />
+      <div className="guide">
+        <Card className="container">
+          <h1>Guides</h1>
+          <p>
+            We know it. Visiting a new place can be tough. Especially with a place like Mysuru full of rich tradition and heritage. Planning your travel, listing out places to visit, places to stay, places to eat, and much more can get really confusing really quickly.
+          </p>
+          <p>
+            Fear not! Download the free <a href="#" style={{ color: "#f58026" }}>Mysuru tour guide</a> with city maps, round ups about popular tourist attractions and much more.
+          </p>
+          <p>Incase you get lost looking at the endless possibilities or want any general help, feel free to contact one of the volunteers who will be willing to help you.</p>
+          <h2>
+            Volunteers you can reach out to:
+          </h2>
+          <div className="guide-cards">
+            {volunteer_list.map((p, idx) => {
+              return (
+                <Card className={`${classes.root} guide-card`}>
+                  <CardContent>
+                    <Typography  >
+                      <h4> {p['name']}</h4>
+                    </Typography>
+                    <Typography style={{ color: "black" }} className={classes.pos} >
+                      <i>{p['place']}</i>
+                    </Typography>
+                    <Typography className={classes.title} color="black" gutterBottom>
+                      Ph. <b>{p['phone']}</b>
+                    </Typography>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      {p['email']}
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      <p>
+                        {p['description']}
+                      </p>
+                    </Typography>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </Card>
+      </div>
+    </>
+  )
 }
-
-
