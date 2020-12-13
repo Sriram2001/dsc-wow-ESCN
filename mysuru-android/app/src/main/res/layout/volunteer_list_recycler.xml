@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clickable_volunteer_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+    android:padding="5dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginBottom="1dp"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/vname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sasiya"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="123123"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vname" />
+
+    <TextView
+        android:id="@+id/vemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="asdasd"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vphone" />
+
+    <TextView
+        android:id="@+id/vdesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="desc"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vemail" />
+
+    <TextView
+        android:id="@+id/vabout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="desc"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vdesc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

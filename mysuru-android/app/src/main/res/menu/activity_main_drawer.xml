@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_about_mysuru"
+            android:title="@string/menu_about_mysuru" />
+
+        <item android:id="@+id/nav_places"
+            android:icon="@drawable/ic_baseline_places_to_visit"
+            android:title="@string/menu_places_to_visit"/>
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_baseline_help_24"
+            android:title="@string/menu_volunteer_form" />
+
+        <item
+            android:id="@+id/nav_volunteer_list"
+            android:icon="@drawable/ic_baseline_people_24"
+            android:title="@string/menu_volunteer_list"
+            />
+
+        <item
+            android:id="@+id/nav_transport"
+            android:icon="@drawable/ic_baseline_emoji_transportation_24"
+            android:title="@string/menu_transportation"/>
+
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_baseline_warning_24"
+            android:title="@string/menu_covid_guidelines" />
+
+
+
+
+    </group>
+</menu>
