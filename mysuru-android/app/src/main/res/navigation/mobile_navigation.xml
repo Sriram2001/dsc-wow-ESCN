@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="dscwow.mysurutourism.ui.home.HomeFragment"
+        android:label="@string/menu_about_mysuru"
+        tools:layout="@layout/fragment_about_mysuru" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="dscwow.mysurutourism.ui.gallery.GalleryFragment"
+        android:label="@string/menu_volunteer_form"
+        tools:layout="@layout/fragment_volunteer_form" />
+
+    <fragment
+        android:id="@+id/nav_volunteer_list"
+        android:name="dscwow.mysurutourism.ui.volunteerList.VolunteerList"
+        android:label="@string/menu_volunteer_list"
+        tools:layout="@layout/fragment_volunteer_list"/>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="dscwow.mysurutourism.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_covid_guidelines"
+        tools:layout="@layout/fragment_covid_guidelines" />
+
+    <fragment
+        android:id="@+id/nav_places"
+        android:name="dscwow.mysurutourism.ui.places.PlacesFragment"
+        android:label="@string/menu_places_to_visit"
+        tools:layout="@layout/fragment_places"/>
+
+    <fragment
+        android:id="@+id/nav_transport"
+        android:name="dscwow.mysurutourism.ui.transport.Transportation"
+        android:label="@string/menu_transportation"
+        tools:layout="@layout/fragment_transportation"/>
+
+
+</navigation>
