@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/dsc-wow-ESCN/static/css/main.05b7d3e2.chunk.css",
-    "main.js": "/dsc-wow-ESCN/static/js/main.674ec8f7.chunk.js",
-    "main.js.map": "/dsc-wow-ESCN/static/js/main.674ec8f7.chunk.js.map",
+    "main.css": "/dsc-wow-ESCN/static/css/main.fe3441cb.chunk.css",
+    "main.js": "/dsc-wow-ESCN/static/js/main.efac789c.chunk.js",
+    "main.js.map": "/dsc-wow-ESCN/static/js/main.efac789c.chunk.js.map",
     "runtime-main.js": "/dsc-wow-ESCN/static/js/runtime-main.1e0bbdc7.js",
     "runtime-main.js.map": "/dsc-wow-ESCN/static/js/runtime-main.1e0bbdc7.js.map",
-    "static/js/2.d50510a2.chunk.js": "/dsc-wow-ESCN/static/js/2.d50510a2.chunk.js",
-    "static/js/2.d50510a2.chunk.js.map": "/dsc-wow-ESCN/static/js/2.d50510a2.chunk.js.map",
+    "static/js/2.b6438836.chunk.js": "/dsc-wow-ESCN/static/js/2.b6438836.chunk.js",
+    "static/js/2.b6438836.chunk.js.map": "/dsc-wow-ESCN/static/js/2.b6438836.chunk.js.map",
     "index.html": "/dsc-wow-ESCN/index.html",
-    "static/css/main.05b7d3e2.chunk.css.map": "/dsc-wow-ESCN/static/css/main.05b7d3e2.chunk.css.map",
-    "static/js/2.d50510a2.chunk.js.LICENSE.txt": "/dsc-wow-ESCN/static/js/2.d50510a2.chunk.js.LICENSE.txt",
+    "static/css/main.fe3441cb.chunk.css.map": "/dsc-wow-ESCN/static/css/main.fe3441cb.chunk.css.map",
+    "static/js/2.b6438836.chunk.js.LICENSE.txt": "/dsc-wow-ESCN/static/js/2.b6438836.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/dsc-wow-ESCN/static/media/bg.69d84220.jpg",
     "static/media/logo.479a635a.png": "/dsc-wow-ESCN/static/media/logo.479a635a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.1e0bbdc7.js",
-    "static/js/2.d50510a2.chunk.js",
-    "static/css/main.05b7d3e2.chunk.css",
-    "static/js/main.674ec8f7.chunk.js"
+    "static/js/2.b6438836.chunk.js",
+    "static/css/main.fe3441cb.chunk.css",
+    "static/js/main.efac789c.chunk.js"
   ]
 }
