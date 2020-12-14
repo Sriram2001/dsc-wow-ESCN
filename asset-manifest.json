@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dsc-wow-ESCN/static/css/main.05b7d3e2.chunk.css",
-    "main.js": "/dsc-wow-ESCN/static/js/main.60957fe6.chunk.js",
-    "main.js.map": "/dsc-wow-ESCN/static/js/main.60957fe6.chunk.js.map",
+    "main.js": "/dsc-wow-ESCN/static/js/main.aff8f2a2.chunk.js",
+    "main.js.map": "/dsc-wow-ESCN/static/js/main.aff8f2a2.chunk.js.map",
     "runtime-main.js": "/dsc-wow-ESCN/static/js/runtime-main.1e0bbdc7.js",
     "runtime-main.js.map": "/dsc-wow-ESCN/static/js/runtime-main.1e0bbdc7.js.map",
     "static/js/2.181c84c5.chunk.js": "/dsc-wow-ESCN/static/js/2.181c84c5.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1e0bbdc7.js",
     "static/js/2.181c84c5.chunk.js",
     "static/css/main.05b7d3e2.chunk.css",
-    "static/js/main.60957fe6.chunk.js"
+    "static/js/main.aff8f2a2.chunk.js"
   ]
 }
